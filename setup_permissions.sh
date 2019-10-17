@@ -1,0 +1,2 @@
+#!/bin/bash
+psql -c "ALTER ROLE $POSTGRESQL_USER REPLICATION;"

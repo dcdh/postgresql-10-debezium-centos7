@@ -17,4 +17,9 @@ RUN git clone https://github.com/eulerto/wal2json -b master --single-branch \
 
 COPY debezium.conf /opt/app-root/src/postgresql-cfg/debezium.conf
 
+COPY setup_permissions.sh /opt/app-root/src/postgresql-start/setup_permissions.sh
+
 USER 26
+
+ENTRYPOINT ["container-entrypoint"]
+CMD ["run-postgresql-master"]
